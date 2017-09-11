@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         "Accept": "application/json, text/plain, */*"
     ]
 
+    var sid = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -53,18 +55,13 @@ class ViewController: UIViewController {
 //            print("Response: \(String(describing: response.response))") // http url response
 //            print("Result: \(response.result)")                         // response serialization result
             
-//            if let json = response.result.value {
-//                print("JSON: \(json)") // serialized json response
-//            }
-//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-//                print("Data: \(utf8Text)") // original server data as UTF8 string
-//            }
-            
             let jsonData = JSON(response.result.value!)
             if (jsonData["status"] != 200) {
                 self.error.text = "Error: \(jsonData["message"])"
+            } else {
+                self.sid = jsonData["data"]["sid"].string!
+                self.performSegue(withIdentifier:"tspLogin", sender:self);
             }
-//            print(jsonData["status"])
         }
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1609F010E095C678C5D8110E /* Pods_LaunchTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5F34CC4C92FB75362E60B /* Pods_LaunchTest.framework */; };
+		404135D01F66323E0042EE93 /* BrandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404135CF1F66323E0042EE93 /* BrandVC.swift */; };
 		409409E91F64B649007D8E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409409E81F64B649007D8E9D /* AppDelegate.swift */; };
 		409409EB1F64B649007D8E9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409409EA1F64B649007D8E9D /* ViewController.swift */; };
 		409409EE1F64B649007D8E9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 409409EC1F64B649007D8E9D /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		2D7E1011B9E443CA167CF603 /* Pods-LaunchTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaunchTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-LaunchTest/Pods-LaunchTest.release.xcconfig"; sourceTree = "<group>"; };
+		404135CF1F66323E0042EE93 /* BrandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandVC.swift; sourceTree = "<group>"; };
 		409409E51F64B649007D8E9D /* LaunchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		409409E81F64B649007D8E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		409409EA1F64B649007D8E9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				409409E81F64B649007D8E9D /* AppDelegate.swift */,
 				409409EA1F64B649007D8E9D /* ViewController.swift */,
+				404135CF1F66323E0042EE93 /* BrandVC.swift */,
 				409409EC1F64B649007D8E9D /* Main.storyboard */,
 				409409F21F64B649007D8E9D /* Assets.xcassets */,
 				409409F41F64B649007D8E9D /* LaunchScreen.storyboard */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404135D01F66323E0042EE93 /* BrandVC.swift in Sources */,
 				409409F11F64B649007D8E9D /* LaunchTest.xcdatamodeld in Sources */,
 				409409EB1F64B649007D8E9D /* ViewController.swift in Sources */,
 				409409E91F64B649007D8E9D /* AppDelegate.swift in Sources */,
