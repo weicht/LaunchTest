@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
 
 class ViewController: UIViewController {
+
+    let LOGIN_ENDPOINT = "http://tradespacedev.bitvisory.com:8081/v1/auth/vortex/basic"
+    let header = [
+        "Content-Type": "application/json",
+        "Accept": "application/json, text/plain, */*"
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +29,43 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet weak var error: UILabel!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBAction func signInPressed(_ sender: UIButton) {
+        if (username.text!.count == 0 || password.text!.count == 0) {
+            error.text! = "Username nor Password can be empty"
+        } else {
+            error.text! = ""
+            performLogin()
+        }
+    }
+    
+    func performLogin(){
+        print("Logging in: \(username.text!) // \(password.text!)")
+        let parameters: [String: Any] = [
+            "email": username.text!,
+            "password": password.text!
+        ]
+        
+        Alamofire.request(LOGIN_ENDPOINT, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { response in
+//            print("Request: \(String(describing: response.request))")   // original url request
+//            print("Response: \(String(describing: response.response))") // http url response
+//            print("Result: \(response.result)")                         // response serialization result
+            
+//            if let json = response.result.value {
+//                print("JSON: \(json)") // serialized json response
+//            }
+//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+//                print("Data: \(utf8Text)") // original server data as UTF8 string
+//            }
+            
+            let jsonData = JSON(response.result.value!)
+            if (jsonData["status"] != 200) {
+                self.error.text = "Error: \(jsonData["message"])"
+            }
+//            print(jsonData["status"])
+        }
+    }
 }
 
