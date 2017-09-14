@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1609F010E095C678C5D8110E /* Pods_LaunchTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5F34CC4C92FB75362E60B /* Pods_LaunchTest.framework */; };
+		4032D2E01F6B13E300D2F593 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032D2DF1F6B13E300D2F593 /* AuthService.swift */; };
+		4032D2E31F6B172D00D2F593 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4032D2E21F6B172D00D2F593 /* Constants.swift */; };
 		404135D01F66323E0042EE93 /* BrandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404135CF1F66323E0042EE93 /* BrandVC.swift */; };
 		409409E91F64B649007D8E9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409409E81F64B649007D8E9D /* AppDelegate.swift */; };
 		409409EB1F64B649007D8E9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409409EA1F64B649007D8E9D /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		2D7E1011B9E443CA167CF603 /* Pods-LaunchTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaunchTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-LaunchTest/Pods-LaunchTest.release.xcconfig"; sourceTree = "<group>"; };
+		4032D2DF1F6B13E300D2F593 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		4032D2E21F6B172D00D2F593 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		404135CF1F66323E0042EE93 /* BrandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandVC.swift; sourceTree = "<group>"; };
 		409409E51F64B649007D8E9D /* LaunchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		409409E81F64B649007D8E9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4032D2DE1F6B13C100D2F593 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4032D2DF1F6B13E300D2F593 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4032D2E11F6B14E000D2F593 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4032D2E21F6B172D00D2F593 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		409409DC1F64B649007D8E9D = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +94,8 @@
 		409409E71F64B649007D8E9D /* LaunchTest */ = {
 			isa = PBXGroup;
 			children = (
+				4032D2E11F6B14E000D2F593 /* Utilities */,
+				4032D2DE1F6B13C100D2F593 /* Services */,
 				409409E81F64B649007D8E9D /* AppDelegate.swift */,
 				409409EA1F64B649007D8E9D /* ViewController.swift */,
 				404135CF1F66323E0042EE93 /* BrandVC.swift */,
@@ -227,8 +249,10 @@
 			files = (
 				404135D01F66323E0042EE93 /* BrandVC.swift in Sources */,
 				409409F11F64B649007D8E9D /* LaunchTest.xcdatamodeld in Sources */,
+				4032D2E01F6B13E300D2F593 /* AuthService.swift in Sources */,
 				409409EB1F64B649007D8E9D /* ViewController.swift in Sources */,
 				409409E91F64B649007D8E9D /* AppDelegate.swift in Sources */,
+				4032D2E31F6B172D00D2F593 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

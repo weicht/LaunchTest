@@ -17,8 +17,7 @@ class BrandVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("BrandVC viewDidLoad")
-        loadBrandData()
-    
+        AuthService.instance.getProducts()
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,8 +25,5 @@ class BrandVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func loadBrandData() {
-        print("Loading brand data...")
-    }
 }
 

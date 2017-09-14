@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+//import AuthService
 
 
 class ViewController: UIViewController {
@@ -39,29 +40,15 @@ class ViewController: UIViewController {
             error.text! = "Username nor Password can be empty"
         } else {
             error.text! = ""
-            performLogin()
+            AuthService.instance.performLogin(username: username.text!, password: password.text!,
+                                              callback: self.loginCallback)
         }
     }
     
-    func performLogin(){
-        print("Logging in: \(username.text!) // \(password.text!)")
-        let parameters: [String: Any] = [
-            "email": username.text!,
-            "password": password.text!
-        ]
-        
-        Alamofire.request(LOGIN_ENDPOINT, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { response in
-//            print("Request: \(String(describing: response.request))")   // original url request
-//            print("Response: \(String(describing: response.response))") // http url response
-//            print("Result: \(response.result)")                         // response serialization result
-            
-            let jsonData = JSON(response.result.value!)
-            if (jsonData["status"] != 200) {
-                self.error.text = "Error: \(jsonData["message"])"
-            } else {
-                self.sid = jsonData["data"]["sid"].string!
-                self.performSegue(withIdentifier:"tspLogin", sender:self);
-            }
+    func loginCallback(loginResponse: String?){
+        error.text! = loginResponse!
+        if (error.text!.count == 0){
+            self.performSegue(withIdentifier:"tspLogin", sender:self)
         }
     }
 }
