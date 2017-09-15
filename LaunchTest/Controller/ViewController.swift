@@ -45,6 +45,11 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func logOut(_ sender: UIButton) {
+        print("logOut")
+    }
+    
     func loginCallback(loginResponse: String?){
         error.text! = loginResponse!
         if (error.text!.count == 0){

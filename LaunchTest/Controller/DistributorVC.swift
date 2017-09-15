@@ -1,8 +1,8 @@
 //
-//  BrandVC.swift
+//  DistributorVC.swift
 //  LaunchTest
 //
-//  Created by Chris Weicht on 9/10/17.
+//  Created by Chris Weicht on 9/14/17.
 //  Copyright © 2017 Chris Weicht. All rights reserved.
 //
 
@@ -11,19 +11,23 @@ import Alamofire
 import SwiftyJSON
 
 
-class BrandVC: UIViewController {
+class DistributorVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("BrandVC viewDidLoad")
-        AuthService.instance.getProducts()
+        print("DistributorVC viewDidLoad")
+        AuthService.instance.getDistributors(callback: storeDistributors)
+    }
+    
+    func storeDistributors(distributors: Any?){
+        print(distributors!)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 

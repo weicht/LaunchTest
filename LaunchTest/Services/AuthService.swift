@@ -52,7 +52,7 @@ class AuthService {
         }
     }
     
-    func getProducts(){
+    func getProducts(callback: @escaping (_ response: JSON?) -> Any){
         let header = [
             "Content-Type": "application/json",
             "Accept": "application/json, text/plain, */*",
@@ -65,18 +65,17 @@ class AuthService {
             //            print("Result: \(response.result)")                         // response serialization result
             
             let jsonData = JSON(response.result.value!)
-            print(jsonData)
             if (jsonData["status"] != "200") {
                 print("Error with getting products - TBD how to respond [\(jsonData["status"])]")
             } else {
                 print("Success with getting products - TBD how to respond")
             }
-//            callback(loggedInMsg)
+            callback(jsonData)
         }
 
     }
 
-    func getDistributors(){
+    func getDistributors(callback: @escaping (_ response: JSON?) -> Any){
         let header = [
             "Content-Type": "application/json",
             "Accept": "application/json, text/plain, */*",
@@ -86,13 +85,12 @@ class AuthService {
         Alamofire.request(DISTRIBUTORS_ENDPOINT, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { response in
             
             let jsonData = JSON(response.result.value!)
-            print(jsonData)
             if (jsonData["status"] != "200") {
                 print("Error with getting distributors - TBD how to respond [\(jsonData["status"])]")
             } else {
                 print("Success with getting distributors - TBD how to respond")
             }
-            //            callback(loggedInMsg)
+            callback(jsonData)
         }
         
     }
